@@ -3,7 +3,7 @@
 return [
     'entities' => [
         'category' => [
-            'model' => 'App\Models\Category',
+            'model' => 'App/Models/Category',
             'table' => 'categories',
             'fillable' => ['name', 'slug', 'image_url'],
             'fields' => [
@@ -25,7 +25,7 @@ return [
             ],
         ],
         'news' => [
-            'model' => 'App\Models\News',
+            'model' => 'App/Models/News',
             'table' => 'news',
             'fillable' => ['title', 'slug', 'text', 'category_id'],
             'fields' => [

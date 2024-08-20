@@ -52,7 +52,7 @@ class CrudPublish extends Command
         $modelName = $config['model'];
         $fillable = $config['fillable'];
         $content = $this->getStubContents('Model', $modelName, $fillable);
-        $this->saveFile($modelName, $content);
+        $this->saveFile("Http/Models/", $content);
     }
 
     private function createMigration($config)
