@@ -30,7 +30,7 @@ class CrudPublish extends Command
     public function handle()
     {
         $entity = $this->argument('entity');
-        $config = Config::get('entities.' . $entity);
+        $config = Config::get('crud.entities.' . $entity);
 
         if (!$config) {
             $this->error("Entity configuration for '{$entity}' not found.");
