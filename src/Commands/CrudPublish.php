@@ -86,7 +86,7 @@ class CrudPublish extends Command
 
     private function getStubContents($type, $name, ...$args)
     {
-        $stub = file_get_contents(base_path('vendor/your-package-name/src/stubs/' . $type . '.stub'));
+        $stub = file_get_contents(base_path('hanklobo/zscrud/src/stubs/' . $type . '.stub'));
         return str_replace(['{{ $' . $type . 'Name }}'], [$name], $stub);
     }
 
