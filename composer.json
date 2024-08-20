@@ -34,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Hanklobo\\ZSCRUD\\ZSCRUDServiceProvider"
+                "Hanklobo\\ZSCRUD\\Providers\\ZSCRUDServiceProvider"
             ],
             "aliases": {
                 "ZSCRUD": "Hanklobo\\ZSCRUD\\Facades\\ZSCRUD"
