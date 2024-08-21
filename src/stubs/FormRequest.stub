@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class {{ $requestName }} extends FormRequest
+class {{ $RequestName }} extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class {{ $requestName }} extends FormRequest
      */
     public function authorize()
     {
-        return true; // ou lógica de autorização
+        return \Auth::user()->can('{{ $permission }}');
     }
 
     /**
@@ -24,7 +24,7 @@ class {{ $requestName }} extends FormRequest
     public function rules()
     {
         return [
-            // Defina suas regras de validação aqui
+            {{ $validationRules }}
         ];
     }
 
@@ -36,7 +36,7 @@ class {{ $requestName }} extends FormRequest
     public function messages()
     {
         return [
-            // Defina as mensagens de retorno aqui
+            {{ $validationMessages }}
         ];
     }
 }

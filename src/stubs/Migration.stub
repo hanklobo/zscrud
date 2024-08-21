@@ -15,8 +15,9 @@ class {{ $migrationName }} extends Migration
     {
         Schema::create('{{ $tableName }}', function (Blueprint $table) {
             $table->id();
-            // Adicione suas colunas aqui
+            {{ $Schema }}
             $table->timestamps();
+            $table->softDelete();
         });
     }
 

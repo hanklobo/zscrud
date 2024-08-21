@@ -15,7 +15,7 @@ class {{ $modelName }} extends Model
      * @var array
      */
     protected $fillable = [
-        // Defina os campos que podem ser mass assignados
+        {{ $fillable }}
     ];
 
     /**
@@ -24,8 +24,8 @@ class {{ $modelName }} extends Model
      * @var array
      */
     protected $casts = [
-        // Defina os casts, se necessário
+        {{ $casts }}
     ];
 
-    // Adicione métodos relacionais ou de escopo aqui
+    // TODO: Adicionar métodos relacionais ou de escopo aqui
 }
