@@ -12,7 +12,7 @@ class CrudController
         $crud = $cruds['index'] ?? abort(404);
 
         return view(
-            'crud.index',
+            'zscrud::crud.index',
             $crud['config'] ?? []
         );
     }
@@ -22,7 +22,7 @@ class CrudController
         $crud = $cruds['create'] ?? abort(404);
 
         return view(
-            'crud.index',
+            'zscrud::crud.index',
             $crud['config'] ?? []
         );
     }
