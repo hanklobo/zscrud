@@ -46,11 +46,11 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        @hasanyrole('root|admin')
-                        <x-dropdown-link :href="route('config.index')">
-                            {{ __('Configuration') }}
-                        </x-dropdown-link>
-                        @endhasanyrole
+{{--                        @hasanyrole('root|admin')--}}
+{{--                        <x-dropdown-link :href="route('config.index')">--}}
+{{--                            {{ __('Configuration') }}--}}
+{{--                        </x-dropdown-link>--}}
+{{--                        @endhasanyrole--}}
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
