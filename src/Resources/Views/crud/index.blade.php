@@ -29,9 +29,8 @@
                 @endif
                 <div class="max-w-full">
                     @if(!is_null($block))
-                        @include($block)
+                        @include("zscrud::{$block}")
                     @endif
-{{--                    @include('crud.list.icons')--}}
                 </div>
             </div>
         </div>

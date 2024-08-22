@@ -28,9 +28,9 @@
         <div class="grid grid-cols-2 gap-4">
             @foreach($fields as $field => $def)
                 @if($def['type'] == 'section')
-                    @include('crud.form.components.section',['title' => $def['label'] ?? '--'])
+                    @include('zscrud::crud.form.components.section',['title' => $def['label'] ?? '--'])
                 @elseif($def['type'] == 'select')
-                    @include('crud.form.components.select',[
+                    @include('zscrud::crud.form.components.select',[
                         'name' => $field,
                         'label' => $def['label'] ?? '',
                         'options' => $def['options'] ?? [],
@@ -51,7 +51,7 @@
                         <x-input-error class="mt-2" :messages="$errors->get($field)" />
                     </div>
                 @else
-                    @include('crud.form.components.input',[
+                    @include('zscrud::crud.form.components.input',[
                         'name' => $field,
                         'label' => $def['label'],
                         'type' => $def['type'] ?? 'text',
