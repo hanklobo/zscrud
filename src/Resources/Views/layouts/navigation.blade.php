@@ -9,7 +9,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-app-logo src="https://i.ibb.co/ThvFM6Z/Screenshot-2024-08-21-at-23-12-22.png" class="block h-9 w-auto fill-current text-gray-800" alt="logo"/>
+                        <x-zscrud::app-logo src="https://i.ibb.co/ThvFM6Z/Screenshot-2024-08-21-at-23-12-22.png" class="block h-9 w-auto fill-current text-gray-800" alt="logo"/>
                     </a>
                 </div>
 
