@@ -40,6 +40,49 @@ return [
                 'update' => [],
                 'delete' => [],
             ],
+            'index' => [
+                'config' => [
+                    'title' => 'Categories',
+                    'actions' => [
+                        'crud.create' => 'New Category',
+                    ],
+                    'block' => 'crud.list.table',
+                    'table' => [
+                        'actions' => [
+                            'crud.show' => 'View',
+                            'crud.edit' => 'Edit',
+                            'crud.delete' => 'Delete',
+                        ],
+                        'columns' => [
+                            'id' => 'ID',
+                            'name' => 'Name',
+                            'created_at' => 'Created at',
+                        ],
+                        'items' => [
+                            // nada
+                        ],
+                    ],
+                ],
+            ],
+            'create' => [
+                'config' => [
+                    'title' => 'New Category',
+                    'actions' => [
+                        'crud.index' => 'Go Back',
+                    ],
+                    'block' => 'crud.form.model-form',
+                    'form' => [
+                        'method' => 'post',
+                        'route' => 'crud.store',
+                        'fields' => [
+                            'name' => [
+                                'type' => 'text',
+                                'label' => 'Name',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
         'news' => [
             'model' => 'News',

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 class CrudController
 {
     public function index(Request $request, string $slug){
-        $cruds = Config::get("crud.entity.{$slug}",[]);
+        $cruds = Config::get("crud.entities.{$slug}",[]);
         $crud = $cruds['index'] ?? abort(404);
 
         return view(
@@ -18,7 +18,7 @@ class CrudController
     }
 
     public function create(Request $request, string $slug){
-        $cruds = Config::get("crud.entity.{$slug}",[]);
+        $cruds = Config::get("crud.entities.{$slug}",[]);
         $crud = $cruds['create'] ?? abort(404);
 
         return view(
