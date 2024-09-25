@@ -1,5 +1,5 @@
 @php
-    $appmenu = $appmenu ?? [];
+$appmenu = $appmenu ?? [];
 @endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
@@ -46,18 +46,25 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-{{--                        @hasanyrole('root|admin')--}}
-{{--                        <x-dropdown-link :href="route('config.index')">--}}
-{{--                            {{ __('Configuration') }}--}}
-{{--                        </x-dropdown-link>--}}
-{{--                        @endhasanyrole--}}
+                        <x-dropdown-link :href="route('crud.list')">
+                            {{ __('CRUDs') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('landing-page.edit')">
+                            {{ __('Landing Page') }}
+                        </x-dropdown-link>
+
+                        {{--                        @hasanyrole('root|admin')--}}
+                        {{--                        <x-dropdown-link :href="route('config.index')">--}}
+                        {{--                            {{ __('Configuration') }}--}}
+                        {{--                        </x-dropdown-link>--}}
+                        {{--                        @endhasanyrole--}}
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                                             onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -108,7 +115,7 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                                           onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>

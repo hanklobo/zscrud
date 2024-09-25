@@ -17,6 +17,26 @@ class CrudController
         );
     }
 
+    public function list(Request $request){
+        $cruds = Config::get("crud.entities",[]);
+        $icons = [];
+        foreach ($cruds as $key => $config) {
+            $icons[] = [
+                'url' => route('crud.index',['slug' => $key]),
+                'icon' => 'fa-database',
+                'title' => ucfirst($key),
+            ];
+        }
+
+        return view(
+            'zscrud::crud.index',
+            [
+                'block' => 'crud.list.icons',
+                'items' => $icons,
+            ],
+        );
+    }
+
     public function create(Request $request, string $slug){
         $cruds = Config::get("crud.entities.{$slug}",[]);
         $crud = $cruds['create'] ?? abort(404);

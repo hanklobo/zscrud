@@ -4,10 +4,12 @@ namespace Hanklobo\ZSCRUD\Providers;
 
 use Hanklobo\ZSCRUD\Commands\CrudPublish;
 use Hanklobo\ZSCRUD\ZSCRUD;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class ZSCRUDServiceProvider extends ServiceProvider
 {
+    protected $defer = true;
     public function register()
     {
         $this->app->bind('zscrud', function () {
@@ -32,5 +34,22 @@ class ZSCRUDServiceProvider extends ServiceProvider
             ]);
         }
 
+        $this->app->booted(function () {
+            $this->registerRoutes();
+        });
+    }
+
+    protected function registerRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => 'Hanklobo\ZSCRUD\Http\Controllers',
+        ], function () {
+            Route::get('/', 'PageController@landing')->name('home');
+            Route::get('/dashboard', 'PageController@dashboard')
+                ->middleware(['auth', 'verified'])
+                ->name('dashboard');
+            Route::get('/profile', 'PageController@editUser')->name('profile.edit');
+        });
     }
 }

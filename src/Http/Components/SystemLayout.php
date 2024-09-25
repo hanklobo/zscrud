@@ -12,6 +12,6 @@ class SystemLayout extends Component
      */
     public function render(): View
     {
-        return view('components.system-layout');
+        return view('components.layout-system');
     }
 }
