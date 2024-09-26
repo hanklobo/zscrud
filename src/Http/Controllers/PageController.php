@@ -9,7 +9,6 @@ class PageController
 {
     public function index(Request $request){
         return view('zscrud::pages.blank',[
-            //'block' => 'crud.list.icons',
             'title' => 'Page',
             'actions' => [],
         ]);
@@ -23,7 +22,7 @@ class PageController
                 [
                     'url' => '/crud',
                     'title' => 'Cadastros',
-                    'icon' => 'fa-dashboard',
+                    'icon' => 'fa-database',
                 ],
             ],
         ]);
