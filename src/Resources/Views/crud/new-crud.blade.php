@@ -1,8 +1,4 @@
 <x-zscrud::layout-system>
-    @push('styles')
-        @vite('src/Resources/css/zscrud.css')
-    @endpush
-
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Create New CRUD') }}
@@ -71,6 +67,9 @@
                 </div>
             </form>
         </div>
+        <span class="mt-2 px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 hidden">
+            This CRUD generator will create a new CRUD application based on the information you provide.
+        </span>
     </div>
 
     <script>

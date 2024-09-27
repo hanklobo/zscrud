@@ -28,6 +28,9 @@ class ZSCRUDServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
 
         if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../../dist' => public_path('Hanklobo/ZSCRUD'),
+            ], 'zscrud-assets');
             $this->commands([
                 CrudPublish::class,
             ]);
